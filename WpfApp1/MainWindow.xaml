@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="SIMIT SHM .xlsx to Step7 .seq" Height="550" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Button Content="Browse..." HorizontalAlignment="Left" Margin="654,123,0,0" VerticalAlignment="Top" Width="75" Name="Inp" Click="Gomb_Click"/>
+        <Label Name="Belyeg" Content="Input file (.seq):" HorizontalAlignment="Left" Margin="67,119,0,0" VerticalAlignment="Top" Height="28" Width="111" RenderTransformOrigin="0.782,0.601" FontFamily="Segoe UI Black"/>
+        <TextBox Name="inputPath" Margin="185,122,143,366" RenderTransformOrigin="0.164,0.722" />
+        <!-- <Button Content="Browse..." HorizontalAlignment="Left" Margin="654,160,0,0" VerticalAlignment="Top" Width="75" x:Name="Outp" Click="Gomb_Click"/> -->
+        <Label x:Name="Belyeg_Copy" Content="Output file (.xlsx):" HorizontalAlignment="Left" Margin="67,157,0,0" VerticalAlignment="Top" Height="28" Width="114" RenderTransformOrigin="0.749,0.672" FontFamily="Segoe UI Black">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.338"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.491"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="outputPath" Margin="185,159,143,330" RenderTransformOrigin="0.164,0.722" />
+        <Button Content="Convert" HorizontalAlignment="Left" Margin="346,448,0,0" VerticalAlignment="Top" Height="45" Width="113" FontSize="15" Name="ConvertButton" Click="ConvertButton_Click"/>
+        <TextBox Name="differenceI_Q" PreviewTextInput="differenceI_Q_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="283,249,0,0" TextWrapping="Wrap" Text="1000"  VerticalAlignment="Top" Width="120"/>
+        <Label Name="pityu"  Content="Increment of Q addresses in the SHM:" HorizontalAlignment="Left" Margin="67,246,0,0" VerticalAlignment="Top" />
+        <Image Margin="61,0,270,419" Source="Capture.PNG" Stretch="None"/>
+        <CheckBox Content="Remove 'PS__' from Symbols" HorizontalAlignment="Left" Margin="72,283,0,0" VerticalAlignment="Top" IsChecked="True" Width="173" Height="22" Name="checkBoxRemovePS"/>
+        <CheckBox Content="Correct underscores (PS__FCE__XA4__540  -->  FCE__XA4.540)" HorizontalAlignment="Left" Margin="72,307,0,0" VerticalAlignment="Top" IsChecked="True" Name="checkBoxRepairDashes"/>
+        <CheckBox Content="Flip I/Q addresses" HorizontalAlignment="Left" Margin="72,330,0,0" VerticalAlignment="Top" IsChecked="True" Name="checkBoxFlipIQ"/>
+        <TextBox x:Name="PLCName" HorizontalAlignment="Left" Height="23" Margin="386,353,0,0" TextWrapping="Wrap" Text="SIMATIC 400(1)"  VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <Label x:Name="PLCNameLabel"  Content="PLC Name in HW Config:" HorizontalAlignment="Left" Margin="240,350,0,0" VerticalAlignment="Top" />
+        <Label x:Name="Belyeg_Copy1" Content="Output file (.txt):" HorizontalAlignment="Left" Margin="67,196,0,0" VerticalAlignment="Top" Height="28" Width="114" RenderTransformOrigin="0.749,0.672" FontFamily="Segoe UI Black">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.338"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.491"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="outputSIMITPath" Margin="185,198,143,291" RenderTransformOrigin="0.164,0.722" />
+        <CheckBox Content="Map every signal to PLC" HorizontalAlignment="Left" Margin="72,355,0,0" VerticalAlignment="Top" x:Name="mapEverySignal" Click="mapEverySignal_Click"/>
+
+
+    </Grid>
+</Window>

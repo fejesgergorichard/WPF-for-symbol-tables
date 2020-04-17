@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Symbol table from SIMIT SHM" Height="450" Width="800">
+    <Grid>
+        <Button Content="Browse..." HorizontalAlignment="Left" Margin="523,151,0,0" VerticalAlignment="Top" Width="75" Name="Inp" Click="Gomb_Click"/>
+        <Label Name="Belyeg" Content="Input file (.xlsx):" HorizontalAlignment="Left" Margin="140,147,0,0" VerticalAlignment="Top" Height="28" Width="111" RenderTransformOrigin="0.782,0.601" FontFamily="Segoe UI Black"/>
+        <TextBox Name="inputPath" Margin="253,148,278,245" RenderTransformOrigin="0.164,0.722" />
+        <Button Content="Browse..." HorizontalAlignment="Left" Margin="523,188,0,0" VerticalAlignment="Top" Width="75" x:Name="Outp" Click="Gomb_Click"/>
+        <Label x:Name="Belyeg_Copy" Content="Output file (.asc):" HorizontalAlignment="Left" Margin="135,184,0,0" VerticalAlignment="Top" Height="28" Width="114" RenderTransformOrigin="0.749,0.672" FontFamily="Segoe UI Black">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.338"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.491"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="outputPath" Margin="253,185,278,208" RenderTransformOrigin="0.164,0.722" />
+        <Button Content="Convert" HorizontalAlignment="Left" Margin="331,281,0,0" VerticalAlignment="Top" Height="45" Width="113" FontSize="15" Name="ConvertButton" Click="ConvertButton_Click"/>
+
+
+    </Grid>
+</Window>
